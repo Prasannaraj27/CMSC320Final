@@ -11,8 +11,9 @@
       color: #333;
       margin: 0;
       padding: 2rem;
+      display: flex;
+      justify-content: center;
     }
-
     .intro-container {
       max-width: 700px;
       background: white;
@@ -20,48 +21,37 @@
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       width: 100%;
-      margin: 0 auto;
     }
-
     h1 {
       font-weight: 700;
       color: #2c3e50;
       margin-bottom: 0.3rem;
     }
-
     h2 {
       color: #2c3e50;
       margin-top: 2rem;
       margin-bottom: 0.5rem;
       font-weight: 600;
     }
-
     .authors {
       font-style: italic;
       color: #7f8c8d;
       margin-bottom: 1.5rem;
     }
-
     p {
       line-height: 1.6;
       font-size: 1.1rem;
       color: #4a4a4a;
     }
-
     iframe {
       margin-top: 2rem;
       border: none;
       width: 100%;
-      height: 600px;
+      height: 1200px;
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       background: white;
       display: block;
-    }
-
-    #final-project-html {
-      max-width: 700px;
-      margin: 2rem auto;
     }
   </style>
 </head>
@@ -70,23 +60,14 @@
     <h1>How do factors such as Crime, Income and Weather determine an area's population?</h1>
     <p class="authors">By MacBrandon Numfor Nden, Davin Wambogo, Sai Sreeramani, Prasanna Raj</p>
 
-    <iframe src="contributions.html" title="Body Content"></iframe>
+    <iframe src="contributions.html" title="Contributions"></iframe>
+
+    <h2>Introduction</h2>
+    <p>
+      This project analyzes public data to help answer that question using three key metrics: income, crime, and weather. By curating, cleaning, and visualizing real-world datasets, and using machine learning (KMeans clustering), we aim to group regions by quality-of-life metrics and identify optimal districts for a user with preferences such as high income, low crime, and warm weather. This can help individuals gain insight regarding the best places to live.
+    </p>
+
+    <iframe src="CMSC_320_Final_Project.html" title="Final Project Results"></iframe>
   </section>
-
-  <div id="final-project-html"></div>
-
-  <script>
-    fetch('CMSC_320_Final_Project.html')
-      .then(response => response.text())
-      .then(data => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data, 'text/html');
-        const bodyContent = doc.body.innerHTML;
-        document.getElementById('final-project-html').innerHTML = bodyContent;
-      })
-      .catch(error => {
-        console.error('Error loading final project HTML:', error);
-      });
-  </script>
 </body>
 </html>
