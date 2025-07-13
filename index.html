@@ -62,5 +62,22 @@
 
     <iframe src="contributions.html" title="Body Content"></iframe>
   </section>
+
+  <!-- Container to load and show the final project HTML -->
+  <div id="final-project-html"></div>
+
+  <script>
+    fetch('CMSC_320_Final_Project.html')
+      .then(response => response.text())
+      .then(data => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+        const bodyContent = doc.body.innerHTML;
+        document.getElementById('final-project-html').innerHTML = bodyContent;
+      })
+      .catch(error => {
+        console.error('Error loading final project HTML:', error);
+      });
+  </script>
 </body>
 </html>
